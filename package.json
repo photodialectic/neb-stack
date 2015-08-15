@@ -1,0 +1,50 @@
+{
+  "name": "neb-stack",
+  "version": "1.0.0",
+  "description": "Node, Express JS and Backbone Application stack",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "node build_tools/watch.js",
+    "build": "npm install && npm prune && npm run build:css && npm run build:css-min && npm run build:js",
+    "build:css": "mkdir -p static/css; sass sass/base.scss static/css/main.css",
+    "build:css-min": "node_modules/.bin/cleancss static/css/main.css > static/css/main.min.css",
+    "build:js": "node build_tools/r.js -o build_tools/build.js",
+    "clean:js": "npm run clean:js:config && npm run clean:js:www",
+    "clean:js:config": "find ~/neb-stack/config -type f -name \"*.js\" -exec node node_modules/.bin/js-beautify -r --config build_tools/js_beautify_config.json {} \\;",
+    "clean:js:www": "find ~/neb-stack/www -type f -name \"*.js\" -exec node node_modules/.bin/js-beautify -r --config build_tools/js_beautify_config.json {} \\;",
+    "clean:html": "find ~/neb-stack/templates -type f -name \"*.html\" -exec node node_modules/.bin/js-beautify -r --config build_tools/js_beautify_config.json {} \\;"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/photodialectic/neb-stack.git"
+  },
+  "keywords": [
+    "Node",
+    "Express",
+    "JS",
+    "Backbone",
+    "App",
+    "prototyping"
+  ],
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "clean-css": "^3.3.5",
+    "config": "^1.14.0",
+    "express": "^4.13.0",
+    "extend": "^3.0.0",
+    "js-beautify": "^1.5.10",
+    "jslint": "^0.9.1",
+    "method-override": "^2.3.3",
+    "mongoose": "^4.0.7",
+    "mustache-express": "^1.2.1",
+    "node-watch": "^0.3.4",
+    "process": "^0.11.1"
+  },
+  "author": "Nick Hedberg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/photodialectic/neb-stack/issues"
+  },
+  "homepage": "https://github.com/photodialectic/neb-stack"
+}
