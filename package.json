@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "pre-commit": "npm run clean:js",
     "watch": "node build_tools/watch.js",
     "build": "npm install && npm prune && npm run build:css && npm run build:css-min && npm run build:js",
     "build:css": "mkdir -p static/css; sass sass/base.scss static/css/main.css",
