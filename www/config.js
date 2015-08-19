@@ -6,15 +6,15 @@
 requirejs.config({
   baseUrl: './lib',
   paths: {
-    'app'         : '../app',
-    'controllers' : '../app/controllers',
-    'models'      : '../app/models',
-    'routes'      : '../app/routes',
-    'views'       : '../app/views',
-    'marionette'  : 'core/backbone.marionette',
-    'templates'   : '../../templates',
-    'Mustache'    : 'mustache',
-    'stache'      : 'stache',
+    'app': '../app',
+    'controllers': '../app/controllers',
+    'models': '../app/models',
+    'routes': '../app/routes',
+    'views': '../app/views',
+    'marionette': 'core/backbone.marionette',
+    'templates': '../../templates',
+    'Mustache': 'mustache',
+    'stache': 'stache',
   },
 });
 
